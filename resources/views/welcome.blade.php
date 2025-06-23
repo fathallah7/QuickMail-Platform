@@ -15,8 +15,8 @@
                 Technology - HTML Bootstrap, Tailwind and React NextJS.</p>
             <div class="flex justify-center space-x-4">
                 <a
-                    class="bg-white hover:bg-gray-100 transition duration-300 font-bold px-8 py-3 rounded-md shadow-md hover:shadow-lg">Start
-                    Free Trial</a>
+                    class="bg-white hover:bg-gray-100 transition duration-300 font-bold px-8 py-3 rounded-md shadow-md hover:shadow-lg">
+                    Manage Your Account</a>
                 <a
                     class="bg-blue-700 text-white hover:bg-white hover:text-black transition duration-300 font-bold px-8 py-3 rounded-md shadow-md hover:shadow-lg">
                     Start Now
