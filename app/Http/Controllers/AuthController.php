@@ -69,7 +69,7 @@ class AuthController extends Controller
         $request->session()->invalidate();       // حذف بيانات الجلسة القديمة
         $request->session()->regenerateToken();  // إنشاء CSRF Token جديدة
 
-        return redirect()->route('login');       // تحويل لصفحة تسجيل الدخول
+        return redirect()->route('home');       // تحويل لصفحة تسجيل الدخول
     }
 }
 
