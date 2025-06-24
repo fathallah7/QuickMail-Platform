@@ -8,14 +8,25 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/signup', [AuthController::class,'showSignupForm'])->name('signup');
+Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
 
-Route::get('/login', [AuthController::class,'showLoginForm'])->name('login');
-
-
-Route::post('/signup', [AuthController::class,'signup'])->name('signupDone');
-
-Route::post('/login', [AuthController::class,'login'])->name('loginDone');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 
 
-Route::post('/logout', [AuthController::class,'logout'])->name('logout');
+Route::post('/signup', [AuthController::class, 'signup'])->name('signupDone');
+
+Route::post('/login', [AuthController::class, 'login'])->name('loginDone');
+
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+
+Route::middleware('admin')->group(function () {
+
+    Route::get('/admin/dashboard', function () {
+        return view('/admin/dashboard');
+    })->name('admin.dashboard');
+
+});
+

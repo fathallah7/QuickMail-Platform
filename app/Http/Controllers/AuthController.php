@@ -53,7 +53,14 @@ class AuthController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route("home");
+            $user = Auth::user();
+
+            if ($user->is_admin) {
+                return redirect()->route('admin.dashboard');
+            } else {
+                return redirect()->route('home');
+            }
+
         }
         return back()->withErrors(
             ["email" => "The User Not Found"]
@@ -69,7 +76,7 @@ class AuthController extends Controller
         $request->session()->invalidate();       // حذف بيانات الجلسة القديمة
         $request->session()->regenerateToken();  // إنشاء CSRF Token جديدة
 
-        return redirect()->route('home'); 
+        return redirect()->route('home');
     }
 }
 
