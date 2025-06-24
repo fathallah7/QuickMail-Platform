@@ -17,7 +17,7 @@
                 <a
                     class="bg-white hover:bg-gray-100 transition duration-300 font-bold px-8 py-3 rounded-md shadow-md hover:shadow-lg">
                     Manage Your Account</a>
-                <a
+                <a href="{{route('mail')}}"
                     class="bg-blue-700 text-white hover:bg-white hover:text-black transition duration-300 font-bold px-8 py-3 rounded-md shadow-md hover:shadow-lg">
                     Start Now
                 </a>

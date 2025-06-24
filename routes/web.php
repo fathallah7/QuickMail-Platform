@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,3 +31,12 @@ Route::middleware('admin')->group(function () {
 
 });
 
+
+
+
+//  -----------------------------------------------------------------------------------------
+
+
+Route::middleware('userAuth')->group(function() {
+    Route::get('/mail-form' , [MailController::class , 'mailForm'])->name('mail');
+});
