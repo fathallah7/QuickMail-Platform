@@ -30,7 +30,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/dashboard/{user}' , [AdminController::class , 'destroyUser'])->name('deleteUser');
+<<<<<<< HEAD
     Route::get('/admin/dashboard/user-info/{user}' , [AdminController::class , 'show'])->name('showUserInfo');
+=======
+>>>>>>> ecd26749f24d2910e97a7534c52b8281b7a6e1e6
 });
 
 
