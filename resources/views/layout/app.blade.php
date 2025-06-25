@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
@@ -35,14 +36,14 @@
                                 </button>
                             </form>
                         @else
-                            <button type="submit"
-                                class="inline-block bg-white hover:bg-gray-100 transition duration-300 font-bold shadow-md hover:shadow-lg px-5 py-1.5 rounded-full text-sm leading-normal">
-                                <a href="{{route('login')}}">Login</a>
-                            </button>
-                            <button type="submit"
-                                class="inline-block bg-blue-700 text-white hover:bg-white hover:text-black transition duration-300 font-bold shadow-md hover:shadow-lg px-5 py-1.5 rounded-full text-sm leading-normal">
-                                <a href="{{route('signup')}}">Sign Up</a>
-                            </button>
+                            <a
+                                class="inline-block bg-white hover:bg-gray-100 transition duration-300 font-bold shadow-md hover:shadow-lg px-5 py-1.5 rounded-full text-sm leading-normal"
+                                href="{{route('login')}}">Login
+                            </a>
+                            <a
+                                class="inline-block bg-blue-700 text-white hover:bg-white hover:text-black transition duration-300 font-bold shadow-md hover:shadow-lg px-5 py-1.5 rounded-full text-sm leading-normal"
+                                href="{{route('signup')}}">Sign Up
+                            </a>
                         @endif
                     </div>
                 </div>
