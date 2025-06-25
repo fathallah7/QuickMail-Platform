@@ -82,11 +82,9 @@
                     <td class="py-3 px-6 text-center">
                         <div class="flex item-center justify-center">
                             
-<<<<<<< HEAD
                         <a href="{{route('showUserInfo' , $data->id)}}">
-=======
-                        <a href="#">
->>>>>>> ecd26749f24d2910e97a7534c52b8281b7a6e1e6
+
+                        <a href="{{route('showUserInfo' , $data->id)}}">
                             <button class="w-4 mr-2 transform hover:text-blue-500 hover:scale-110">
                                 <i class="fa-solid fa-user"></i>
                             </button>
