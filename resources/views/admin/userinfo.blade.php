@@ -29,7 +29,6 @@
         </div>
     </div>
 
-    <!-- جدول الإيميلات المرسلة -->
     <div class="bg-white shadow-xl rounded-2xl p-6">
         <h2 class="text-2xl font-bold text-gray-800 mb-4">Sent Emails</h2>
         <div class="overflow-x-auto">
