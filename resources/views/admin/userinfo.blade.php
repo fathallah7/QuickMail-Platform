@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
-                    <tr class="hover:bg-gray-200 transition duration-400">
+                    <tr class="hover:bg-gray-200 transition duration-500">
                         <td class="px-4 py-3 text-gray-900">Meeting Reminder</td>
                         <td class="px-4 py-3 text-gray-600">manager@company.com</td>
                         <td class="px-4 py-3 text-gray-600">2 hours ago</td>
@@ -51,7 +51,7 @@
                             <span class="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">Sent</span>
                         </td>
                     </tr>
-                    <tr class="hover:bg-gray-200 transition duration-400" >
+                    <tr class="hover:bg-gray-200 transition duration-500" >
                         <td class="px-4 py-3 text-gray-900">Invoice #2025</td>
                         <td class="px-4 py-3 text-gray-600">client@business.com</td>
                         <td class="px-4 py-3 text-gray-600">Yesterday</td>
@@ -59,7 +59,7 @@
                             <span class="inline-block px-3 py-1 text-xs font-semibold text-red-700 bg-red-100 rounded-full">Failed</span>
                         </td>
                     </tr>
-                    <tr class="hover:bg-gray-200 transition duration-400">
+                    <tr class="hover:bg-gray-200 transition duration-500">
                         <td class="px-4 py-3 text-gray-900">Event Invitation</td>
                         <td class="px-4 py-3 text-gray-600">friend@mail.com</td>
                         <td class="px-4 py-3 text-gray-600">3 days ago</td>
