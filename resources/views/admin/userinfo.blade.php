@@ -8,54 +8,72 @@
 @section('content')
 
 
-<div class="flex items-center justify-center h-150">
-    <!-- Card Container -->
-    <div class="w-full max-w-md mx-4 bg-white rounded-xl shadow-lg overflow-hidden md:max-w-2xl">
-        <!-- Card Header with Gradient Background -->
-        <div class="h-2 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+<div class="max-w-7xl mx-auto p-6">
 
-        <!-- Card Content -->
-        <div class="p-8">
-            <!-- Profile Section -->
-            <div class="flex items-center">
-                <!-- Avatar -->
-                <div class="flex-shrink-0">
-                    <div class="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full">
-                        <span class="text-2xl font-bold text-blue-600">JD</span>
-                    </div>
-                </div>
-
-                <!-- Name and Title -->
-                <div class="ml-4">
-                    <h2 class="text-xl font-bold text-gray-800">{{$data->name}}</h2>
-                    <p class="text-blue-600">{{$data->created_at}}</p>
-                </div>
+    <!-- بطاقة بيانات المستخدم -->
+    <div class="bg-white shadow-xl rounded-2xl p-6 mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">User Profile</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+                <p class="text-sm text-gray-500">Name</p>
+                <p class="text-lg font-medium text-gray-900">{{$data->name}}</p>
             </div>
-
-            <!-- Divider -->
-            <div class="my-6 border-t border-gray-200"></div>
-
-            <!-- Contact Information -->
-            <div class="space-y-4">
-                <!-- Email -->
-                <div class="flex items-center">
-                    <div class="flex items-center justify-center w-10 h-10 bg-blue-50 rounded-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <p class="text-sm font-medium text-gray-500">Email</p>
-                        <p class="text-gray-700">{{$data->email}}</p>
-                    </div>
-                </div>
+            <div>
+                <p class="text-sm text-gray-500">Email</p>
+                <p class="text-lg font-medium text-gray-900">{{$data->email}}</p>
             </div>
-
+            <div>
+                <p class="text-sm text-gray-500">Joined At</p>
+                <p class="text-lg font-medium text-gray-900">{{$data->created_at}}</p>
+            </div>
         </div>
     </div>
+
+    <!-- جدول الإيميلات المرسلة -->
+    <div class="bg-white shadow-xl rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Sent Emails</h2>
+        <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200 text-sm">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">Subject</th>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">To</th>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">Sent At</th>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                    <tr class="hover:bg-gray-200 transition duration-400">
+                        <td class="px-4 py-3 text-gray-900">Meeting Reminder</td>
+                        <td class="px-4 py-3 text-gray-600">manager@company.com</td>
+                        <td class="px-4 py-3 text-gray-600">2 hours ago</td>
+                        <td class="px-4 py-3">
+                            <span class="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">Sent</span>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-200 transition duration-400" >
+                        <td class="px-4 py-3 text-gray-900">Invoice #2025</td>
+                        <td class="px-4 py-3 text-gray-600">client@business.com</td>
+                        <td class="px-4 py-3 text-gray-600">Yesterday</td>
+                        <td class="px-4 py-3">
+                            <span class="inline-block px-3 py-1 text-xs font-semibold text-red-700 bg-red-100 rounded-full">Failed</span>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-gray-200 transition duration-400">
+                        <td class="px-4 py-3 text-gray-900">Event Invitation</td>
+                        <td class="px-4 py-3 text-gray-600">friend@mail.com</td>
+                        <td class="px-4 py-3 text-gray-600">3 days ago</td>
+                        <td class="px-4 py-3">
+                            <span class="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">Sent</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </div>
+
 
 
 
