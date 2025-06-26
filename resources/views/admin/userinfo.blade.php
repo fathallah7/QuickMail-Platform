@@ -36,6 +36,7 @@
             <table class="min-w-full divide-y divide-gray-200 text-sm">
                 <thead class="bg-gray-50">
                     <tr>
+                        <th class="px-4 py-2 text-left font-semibold text-gray-700">ID</th>
                         <th class="px-4 py-2 text-left font-semibold text-gray-700">Subject</th>
                         <th class="px-4 py-2 text-left font-semibold text-gray-700">To</th>
                         <th class="px-4 py-2 text-left font-semibold text-gray-700">Sent At</th>
@@ -43,30 +44,21 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100">
+                    @foreach ($data->mails as $mail)
                     <tr class="hover:bg-gray-200 transition duration-500">
-                        <td class="px-4 py-3 text-gray-900">Meeting Reminder</td>
-                        <td class="px-4 py-3 text-gray-600">manager@company.com</td>
-                        <td class="px-4 py-3 text-gray-600">2 hours ago</td>
+                        <td class="px-4 py-3 text-gray-900">{{$mail->id}}</td>
+                        <td class="px-4 py-3 text-gray-900">{{$mail->subject}}</td>
+                        <td class="px-4 py-3 text-gray-600">{{$mail->to}}</td>
+                        <td class="px-4 py-3 text-gray-600">{{$mail->created_at->diffForHumans()}}</td>
                         <td class="px-4 py-3">
-                            <span class="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">Sent</span>
+                            @if ( $mail->status == 'sent' )
+                                <span class="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">Sent</span>
+                            @else
+                                <span class="inline-block px-3 py-1 text-xs font-semibold text-red-900 bg-red-100 rounded-full">Failed</span>
+                            @endif
                         </td>
                     </tr>
-                    <tr class="hover:bg-gray-200 transition duration-500" >
-                        <td class="px-4 py-3 text-gray-900">Invoice #2025</td>
-                        <td class="px-4 py-3 text-gray-600">client@business.com</td>
-                        <td class="px-4 py-3 text-gray-600">Yesterday</td>
-                        <td class="px-4 py-3">
-                            <span class="inline-block px-3 py-1 text-xs font-semibold text-red-700 bg-red-100 rounded-full">Failed</span>
-                        </td>
-                    </tr>
-                    <tr class="hover:bg-gray-200 transition duration-500">
-                        <td class="px-4 py-3 text-gray-900">Event Invitation</td>
-                        <td class="px-4 py-3 text-gray-600">friend@mail.com</td>
-                        <td class="px-4 py-3 text-gray-600">3 days ago</td>
-                        <td class="px-4 py-3">
-                            <span class="inline-block px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">Sent</span>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

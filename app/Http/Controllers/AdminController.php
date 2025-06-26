@@ -13,7 +13,7 @@ class AdminController extends Controller
     }
 
     public function show($userId) {
-        $OneUser = User::find($userId);
+        $OneUser = User::with('mails')->find($userId);
         if(is_null($OneUser)) {
             return to_route('admin.dashboard');
         }
