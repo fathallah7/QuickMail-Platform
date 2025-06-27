@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MailController;
@@ -39,5 +40,16 @@ Route::middleware('admin')->group(function () {
 
 Route::middleware('userAuth')->group(function () {
     Route::get('/mail-form', [MailController::class, 'mailForm'])->name('mail');
+    Route::post('/send-mail', [MailController::class, 'send'])->name('send.mail');
 });
 
+
+
+// Route::get('/test-mail', function () {
+//     Mail::raw('This is a test email from QuickMail project.', function ($message) {
+//         $message->to('khafra3.932006@gmail.com')
+//                 ->subject('QuickMail Test');
+//     });
+
+//     return 'Email sent!';
+// });

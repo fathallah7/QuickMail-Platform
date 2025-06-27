@@ -13,13 +13,13 @@
             <div class="flex">
                 <h1 class="font-bold text-blue-900 uppercase text-4xl">Send The <br /> Email</h1>
             </div>
-            <form action="" method="POST">
+            <form action="{{route('send.mail')}}" method="POST">
                 @csrf
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
                     <input
                         class="w-full bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                         type="email"
-                        name="recipient_email"
+                        name="to"
                         placeholder="Recipient Email*"
                         required
                     />
@@ -33,7 +33,7 @@
                 </div>
                 <div class="my-4">
                     <textarea
-                        name="message"
+                        name="body"
                         placeholder="Message*"
                         class="w-full h-32 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                         required
