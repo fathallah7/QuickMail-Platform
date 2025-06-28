@@ -45,24 +45,13 @@
 <div class="container mx-auto px-12 py-8">
     <h1 class="text-3xl text-gray-800 font-bold text-center mb-8 mt-6">Accounts List</h1>
 
-    <!-- Search and Add User (Static) -->
-    <div class="flex flex-col-reverse md:flex-row justify-between items-center mb-3 mt-5">
-        <div class="w-full md:w-1/2  md:mb-0">
-            <input type="text" placeholder="Search users..."
-                class="w-full px-4 py-2 rounded-md border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-        <a href="#">
-            <button class="bg-blue-500 text-white px-4 py-2 my-3 rounded-md hover:bg-blue-600 transition duration-300">
-                Add New User
-            </button>
-        </a>
-    </div>
+
 
     <!-- User Table -->
-    <div class="overflow-x-auto bg-white rounded-lg shadow">
+    <div class="overflow-x-auto bg-white rounded-lg shadow-xl">
         <table class="w-full table-auto">
             <thead>
-                <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                <tr class="bg-gray-300 text-gray-600 uppercase text-sm leading-normal">
                     <th class="py-3 px-6 text-left">ID</th>
                     <th class="py-3 px-6 text-left">Name</th>
                     <th class="py-3 px-6 text-left">Email</th>

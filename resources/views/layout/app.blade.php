@@ -19,7 +19,9 @@
         <nav class="container mx-auto py-4 px-6 ">
             <div class="flex justify-between items-center">
                 <div>
-                    <a href="{{route('home')}}" class="text-4xl font-bold text-blue-700">Quick Mail</a>
+                    <a href="{{route('home')}}" class="text-4xl font-bold {{ auth()->user() && auth()->user()->is_admin ? 'text-red-800' : 'text-blue-700'}} ">
+                        {{ auth()->user() && auth()->user()->is_admin ? 'Admin' : 'QuickMail'}}
+                    </a>
                 </div>
                 <div class="hidden md:flex space-x-6 items-center">
                     {{-- <a class="font-bold hover:text-blue-700 transition duration-300">Home</a>
