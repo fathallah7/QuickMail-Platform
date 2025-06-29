@@ -44,7 +44,7 @@ Route::middleware('userAuth')->group(function () {
 });
 
 
-
+// For Test
 // Route::get('/test-mail', function () {
 //     Mail::raw('This is a test email from QuickMail project.', function ($message) {
 //         $message->to('khafra3.932006@gmail.com')
