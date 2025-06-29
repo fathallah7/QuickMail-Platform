@@ -24,7 +24,7 @@
                     You’re all set to send emails beautifully and effortlessly — right from your browser.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <a class="px-6 py-3 bg-white border border-gray-300 rounded-full shadow-sm hover:bg-gray-100 transition font-semibold">
+                    <a href="{{route('user.account')}}" class="px-6 py-3 bg-white border border-gray-300 rounded-full shadow-sm hover:bg-gray-100 transition font-semibold">
                         Manage Account
                     </a>
                     <a href="{{ route('mail') }}"

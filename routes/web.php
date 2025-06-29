@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\UserController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,9 @@ Route::middleware('admin')->group(function () {
 Route::middleware('userAuth')->group(function () {
     Route::get('/mail-form', [MailController::class, 'mailForm'])->name('mail');
     Route::post('/send-mail', [MailController::class, 'send'])->name('send.mail');
+    Route::get('/user-account' , [UserController::class , 'userAccount'])->name('user.account');
+    Route::put('/user-account', [UserController::class, 'updateProfile'])->name('profile.update');
+
 });
 
 
