@@ -7,10 +7,22 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\UserController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Models\Email ;
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+
+    $usersCount = User::count();
+    $mailsCount = Email::count();
+
+    return view('welcome', [
+        'usersCount' => $usersCount ,
+        'mailscount'=> $mailsCount
+    ]);
+    })->name('home');
+
+
+//  -----------------------------------------------------------------------------------------
 
 
 Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
@@ -31,8 +43,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-    Route::get('/admin/dashboard/{user}' , [AdminController::class , 'destroyUser'])->name('deleteUser');
-    Route::get('/admin/dashboard/user-info/{user}' , [AdminController::class , 'show'])->name('showUserInfo');
+    Route::get('/admin/dashboard/{user}', [AdminController::class, 'destroyUser'])->name('deleteUser');
+    Route::get('/admin/dashboard/user-info/{user}', [AdminController::class, 'show'])->name('showUserInfo');
 });
 
 
@@ -42,10 +54,12 @@ Route::middleware('admin')->group(function () {
 Route::middleware('userAuth')->group(function () {
     Route::get('/mail-form', [MailController::class, 'mailForm'])->name('mail');
     Route::post('/send-mail', [MailController::class, 'send'])->name('send.mail');
-    Route::get('/user-account' , [UserController::class , 'userAccount'])->name('user.account');
+    Route::get('/user-account', [UserController::class, 'userAccount'])->name('user.account');
     Route::put('/user-account', [UserController::class, 'updateProfile'])->name('profile.update');
-
 });
+
+
+//  -----------------------------------------------------------------------------------------
 
 
 // For Test
