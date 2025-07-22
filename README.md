@@ -24,10 +24,3 @@ Quick Mail is a Laravel-based mailing platform that allows users to register, lo
 ## Email Sending
 - All emails are sent using a default system email (e.g., `quickMail@gmail.com`).
 - Users do not use their personal Gmail or SMTP for sending.
-
-## Setup Instructions
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/fathallah/quick-mail.git
-
